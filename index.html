@@ -1,1 +1,58 @@
-<p>Hello World!</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>タイピング</title>
+</head>
+<body>
+    <header>
+        タイピング
+    </header>
+    <main>
+        <div id="canvas"></div>
+    </main>
+    <footer>
+        <button onclick="showingtest('みかん','mikan')">start</button>
+    </footer>
+    <script>
+
+        let canva = document.getElementById("canvas")
+        canva.innerHTML="<h1 id='plobrem'>問題</h1><h2 id='roma'>mondai</h2>"
+
+        let roma=""
+        let kanji=""
+
+
+        function putForCanvas(html){
+            let canva = document.getElementById("canvas")
+            canva.innerHTML=html        
+        }
+
+        function showThePloblem(kanjif,romaf){
+            let canvaf = document.getElementById("plobrem")
+            let canvas = document.getElementById("roma")
+            canvaf.innerHTML=kanjif
+            canvas.innerHTML=romaf
+        }
+
+        function showingtest(first,second){
+            showThePloblem(first,second)
+            roma =second
+            kanji=first
+        }
+        
+        function keypress_ivent(e) {
+            if (e.key == roma[0]){
+                roma = roma.slice(1);
+                showThePloblem(kanji,roma)              
+            }
+                
+            
+        }
+
+        document.addEventListener('keypress', keypress_ivent);
+    </script>
+</body>
+</html>

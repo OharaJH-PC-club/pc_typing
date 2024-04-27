@@ -1,4 +1,24 @@
- let canva = document.getElementById("canvas")
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>タイピング</title>
+</head>
+<body>
+    <header>
+        タイピング
+    </header>
+    <main>
+        <div id="canvas"></div>
+    </main>
+    <footer>
+        <button onclick="showingtest('みかん','mikan')">start</button>
+    </footer>
+    <script>
+
+        let canva = document.getElementById("canvas")
         canva.innerHTML="<h1 id='plobrem'>問題</h1><h2 id='roma'>mondai</h2>"
 
         let roma=""
@@ -26,11 +46,18 @@
         }
         
         let plobrem_index = 0
-        let plobrems=[["みかん","mikan"],["新羽島","shinhashima"]]
+        let plobrems=[["みかん","mikan"],["新羽島","shinhashima"],["東京","Toukyo"],["上野","Ueno"]]
 
         function nextPlobrem(){
-            showingtest(plobrems[plobrem_index][0],plobrems[plobrem_index][1])
-            plobrem_index++
+            try{
+                showingtest(plobrems[plobrem_index][0],plobrems[plobrem_index][1])
+                plobrem_index++                
+            }
+            catch{
+                showingtest("終わり","")
+            }
+                
+                
         }
 
         function keypress_ivent(e) {
@@ -46,3 +73,6 @@
         }
 
         document.addEventListener('keypress', keypress_ivent);
+    </script>
+</body>
+</html>

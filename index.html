@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>タイピング</title>
+    <title>タイピング練習サイト</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Typing Game</h1>
-    <p>Type the word below:</p>
-    <div id="word"></div>
-    <input type="text" id="input">
-    <button onclick="startGame()">Start Game</button>
-    <script src="./main.js"></script>
+    <div class="container">
+        <h1>タイピング練習サイト</h1>
+        <label for="time-limit">時間制限を選択:</label>
+        <select id="time-limit">
+            <option value="5">5秒</option>
+            <option value="30">30秒</option>
+            <option value="60">60秒</option>
+            <option value="120">120秒</option>
+        </select>
+        <div id="text-display" class="text-display">
+            ここにタイピングするテキストが表示されます。
+        </div>
+        <textarea id="text-input" class="text-input" placeholder="ここに入力してください..." disabled></textarea>
+        <div id="results" class="results">
+            結果がここに表示されます。
+        </div>
+        <button id="start-button">スタート</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
